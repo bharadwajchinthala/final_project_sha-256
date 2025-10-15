@@ -21,11 +21,12 @@ The algorithm follows the official pseudocode from [Wikipedia: SHA-2](https://en
 
 ---
 
-##  Compilation and Execution
+## Compilation and Execution
 
-### Step 1: Compile the program
-Use any modern C++ compiler such as `g++`:
-```bash
+Step 1: Compile the program
+
+Use any modern C++ compiler such as g++:
+
 g++ sha256_mark.cpp -o sha256_mark
 
 Step 2: Run the program
@@ -37,17 +38,20 @@ Make sure mark.txt is in the same directory:
 
 The program will output the SHA-256 hash of the entire file.
 
+
 ## Output
+
 SHA-256 hash for Book of Mark:
+
+
 1a7c13f24658ef7d55c2bfb2af4f95b9baf67b84eeb5a9ec5e593e49c8a07d9d
 
 
-
-##How the Algorithm Works
+## How the Algorithm Works
 
 Read the message – The entire file content is read as bytes.
 
-Padding – A 1 bit (0x80) is added, followed by zeros until the message length is 56 bytes modulo 64.
+Padding – A single 1 bit (0x80) is added, followed by zeros until the message length is 56 bytes modulo 64.
 
 Append Length – The message length (in bits) is added as a 64-bit big-endian integer.
 
@@ -57,5 +61,5 @@ Message Schedule Expansion – Each block is expanded into 64 32-bit words.
 
 Main Compression Loop – The words are processed in 64 rounds using logical and bitwise operations with fixed constants.
 
-Hash Combina
+Hash Combination – The output from the final round is combined to produce the 256-bit SHA-256 hash.
 
