@@ -137,7 +137,7 @@ void performSHA256(const vector<unsigned char>& messageBytes, uint32 finalHash[8
 
 int main() {
     // Open the file containing the Book of Mark
-    ifstream textFile("/uploads/mark.txt", ios::binary);
+    ifstream textFile("mark.txt", ios::binary);
     if (!textFile.is_open()) {
         cerr << "Error: Could not open mark.txt" << endl;
         return 1;
@@ -163,3 +163,4 @@ int main() {
 
     return 0;
 }
+
